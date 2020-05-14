@@ -29,8 +29,6 @@ Wordpiece-level이 아닌 **Character-level(음절) tokenizer**를 이용하여 
 
 ## KoCharELECTRA on Transformers
 
-- `Transformers v2.8.0`부터 `ElectraModel`을 공식 지원합니다.
-
 - **Huggingface S3**에 모델이 이미 업로드되어 있어서, **모델을 직접 다운로드할 필요 없이** 곧바로 사용할 수 있습니다.
 
 - `ElectraModel`은 `pooled_output`을 리턴하지 않는 것을 제외하고 `BertModel`과 유사합니다.
@@ -76,14 +74,14 @@ Char-level인 관계로 `max_seq_len`은 128인 최대 길이로 돌렸지만, K
 |                        | NSMC (acc) | Naver NER (F1) |
 | ---------------------- | :--------: | :------------: |
 | KoELECTRA-Base         |   90.21    |     86.87      |
-| **KoCharELECTRA-Base** |   90.05    |     83.57      |
+| **KoCharELECTRA-Base** | **90.05**  |   **83.57**    |
 
 ### Small Model
 
 |                         | NSMC (acc) | Naver NER (F1) |
 | ----------------------- | :--------: | :------------: |
 | KoELECTRA-Small         |   88.76    |     84.11      |
-| **KoCharELECTRA-Small** |   88.90    |     81.97      |
+| **KoCharELECTRA-Small** | **88.90**  |   **81.97**    |
 
 ## Acknowledgement
 
