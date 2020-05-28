@@ -58,7 +58,7 @@ model = ElectraModel.from_pretrained("monologg/kocharelectra-small-discriminator
 tokenizer = KoCharElectraTokenizer.from_pretrained("monologg/kocharelectra-small-discriminator")
 ```
 
-### Testing Code
+### Test Code
 
 ```bash
 $ python3 test_kocharelectra.py
