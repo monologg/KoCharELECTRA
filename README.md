@@ -90,7 +90,7 @@ Char-level인 관계로 `max_seq_len=128`로 돌렸지만 (KoELECTRA에서는 50
 |                        | NSMC (acc) | Naver NER (F1) |
 | ---------------------- | :--------: | :------------: |
 | KoELECTRA-Base         |   90.21    |     86.87      |
-| **KoCharELECTRA-Base** | **90.18**  |   **84.52**    |
+| **KoCharELECTRA-Base** | **90.18**  |   **84.99**    |
 
 ### Small Model
 
