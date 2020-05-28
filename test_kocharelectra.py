@@ -21,14 +21,13 @@ inputs = tokenizer.encode_plus(
     text_pair=None,
     add_special_tokens=True,  # This add [CLS] on front, [SEP] at last
     pad_to_max_length=True,
-    max_length=50
+    max_length=40
 )
 
 tokens = tokenizer.tokenize("[CLS] " + text + " [SEP]")
 
 print("--------------------------------------------------------")
 print("tokens: ", " ".join(tokens))
-print("string: {}".format(tokenizer.convert_tokens_to_string(tokens)))
 print("input_ids: {}".format(" ".join([str(x) for x in inputs['input_ids']])))
 print("token_type_ids: {}".format(" ".join([str(x) for x in inputs['token_type_ids']])))
 print("attention_mask: {}".format(" ".join([str(x) for x in inputs['attention_mask']])))
@@ -42,6 +41,6 @@ attention_mask = torch.LongTensor(inputs['attention_mask']).unsqueeze(0)
 with torch.no_grad():
     output = model(input_ids=input_ids, token_type_ids=token_type_ids, attention_mask=attention_mask)
 last_layer_hidden_state = output[0]
-print("<Last layer hidden state (batch_size, max_seq_len, dim)>")
-print(last_layer_hidden_state.size())
-print(last_layer_hidden_state)
+print("[Last layer hidden state]")
+print("Size:", last_layer_hidden_state.size())
+print("Tensor:", last_layer_hidden_state)
