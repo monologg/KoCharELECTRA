@@ -14,17 +14,18 @@ args = parser.parse_args()
 model = ElectraModel.from_pretrained(args.model_name_or_path)
 tokenizer = KoCharElectraTokenizer.from_pretrained(args.model_name_or_path)
 
-text = "나는 걸어가고 있는 중입니다. 나는걸어 가고있는 중입니다."
+text_a = "나는 걸어가고 있는 중입니다."
+text_b = "나는 밥을 먹고 있는 중입니다."
 
 inputs = tokenizer.encode_plus(
-    text=text,
-    text_pair=None,
+    text=text_a,
+    text_pair=text_b,
     add_special_tokens=True,  # This add [CLS] on front, [SEP] at last
     pad_to_max_length=True,
     max_length=40
 )
 
-tokens = tokenizer.tokenize("[CLS] " + text + " [SEP]")
+tokens = tokenizer.tokenize("[CLS] " + text_a + " [SEP] " + text_b + " [SEP]")
 
 print("--------------------------------------------------------")
 print("tokens: ", " ".join(tokens))
