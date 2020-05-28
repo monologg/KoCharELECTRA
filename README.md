@@ -83,7 +83,7 @@ Tensor: tensor([[[ 0.1453, -0.0629,  0.2065,  ...,  0.5304, -0.4602,  0.6803],
 
 ## Result on Subtask
 
-Char-level인 관계로 `max_seq_len`은 128인 최대 길이로 돌렸지만, KoELECTRA와 비교했을 때 나쁘지 않은 성능을 보였습니다.
+Char-level인 관계로 `max_seq_len=128`로 돌렸지만 (KoELECTRA에서는 50으로 설정), KoELECTRA와 비교했을 때 나쁘지 않은 성능을 보였습니다.
 
 ### Base Model
 
